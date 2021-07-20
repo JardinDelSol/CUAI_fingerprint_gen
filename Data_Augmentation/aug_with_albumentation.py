@@ -10,7 +10,7 @@ ColorJitter = AL.Compose(
     [AL.augmentations.transforms.ColorJitter(always_apply=True, p=1)]
 )
 
-base_dir = "./bright_changed"
+base_dir = "./Dataset/bright_changed"
 
 
 def main():

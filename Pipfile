@@ -4,8 +4,20 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+click = "*"
+requests = "*"
+tqdm = "*"
+pyspng = "*"
+ninja = "*"
+imageio-ffmpeg = "==0.4.3"
+pillow = "*"
+opencv-python = "*"
 
 [dev-packages]
+black = "*"
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true

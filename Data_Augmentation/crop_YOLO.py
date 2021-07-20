@@ -46,9 +46,26 @@ def main():
             croped = image[
                 y - int(h / 2) : y + int(h / 2), x - int(w / 2) : x + int(w / 2)
             ]
+            h, w, _ = croped.shape
+            gap = abs(w - h)
+
+            if gap:
+                if w > h:
+                    top = gap // 2
+                    bot = gap - top
+                    croped = cv2.copyMakeBorder(
+                        croped, top, bot, 0, 0, cv2.BORDER_CONSTANT, 0
+                    )
+                else:
+                    right = gap // 2
+                    left = gap - right
+                    croped = cv2.copyMakeBorder(
+                        croped, 0, 0, left, right, cv2.BORDER_CONSTANT, 0
+                    )
+
             new_dir = os.path.join(save_img_dir, str(count) + ".jpg")
             print(new_dir)
-            croped = cv2.resize(croped, (526, 526), cv2.INTER_NEAREST)
+            croped = cv2.resize(croped, (512, 512), cv2.INTER_NEAREST)
             try:
                 cv2.imwrite(new_dir, croped)
             except:
