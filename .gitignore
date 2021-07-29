@@ -2,3 +2,5 @@ stylegan2
 .zip
 .jpg
 Dataset
+generative_inpainting
+stylegan-ada-pytorch

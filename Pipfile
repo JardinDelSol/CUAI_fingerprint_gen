@@ -12,12 +12,14 @@ ninja = "*"
 imageio-ffmpeg = "==0.4.3"
 pillow = "*"
 opencv-python = "*"
+tensorflow = "*"
+neuralgym = {git = "https://github.com/JiahuiYu/neuralgym"}
 
 [dev-packages]
 black = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.6"
 
 [pipenv]
 allow_prereleases = true
